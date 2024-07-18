@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar button{
+    /* border-radius: 20px; */
+    width: 200px; 
+    height: 80px;
+    padding: 15px; 
+    margin-bottom: 25px;
+    font-size: larger;
+}
+
+.sidebar img {
+    width: 150px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.sidebar a { 
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+/* no hace nada por alguna razon */
+.sidebar a:hover {
+    background-color: #f3f3f3;
+}
+
+.main-content {
+    flex: 1;
+    padding: 100px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.calendar {
+    margin-top: 20px;
+}
+
+.calendar h2 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.calendar .month {
+    display: flex;
+    justify-content: space-between;
+}
+
+.month .month-box {
+    background-color: #ccc;
+    width: 32%;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.hidden {
+    display: none;
+}
