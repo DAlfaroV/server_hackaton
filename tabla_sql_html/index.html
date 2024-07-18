@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Sensores</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Datos de Sensores</h1>
+    <button onclick="actualizarDatos()">Actualizar Datos</button>
+    <table id="tabla-datos">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Temperatura</th>
+                <th>Humedad</th>
+                <th>Humedad del Suelo</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Los datos se llenarán aquí con JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        function actualizarDatos() {
+            fetch('http://localhost:5000/datos')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('#tabla-datos tbody');
+                    tbody.innerHTML = '';
+                    data.forEach(row => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${row.id}</td>
+                            <td>${row.temperatura}</td>
+                            <td>${row.humedad}</td>
+                            <td>${row.humedad_suelo}</td>
+                            <td>${row.timestamp}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                })
+                .catch(error => console.error('Error al obtener los datos:', error));
+        }
+
+        // Actualizar los datos al cargar la página
+        document.addEventListener('DOMContentLoaded', actualizarDatos);
+    </script>
+</body>
+</html>
