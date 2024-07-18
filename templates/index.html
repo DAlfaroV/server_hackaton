@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        .sidebar img {
+            width: 50px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #000;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .calendar {
+            margin-top: 20px;
+        }
+
+        .calendar h2 {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        .calendar .month {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .month .month-box {
+            background-color: #ccc;
+            width: 32%;
+            height: 100px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="logo.png" alt="Logo">
+        <a href="#">Inicio</a>
+        <a href="#">Plantaciones</a>
+        <a href="#">xxxx</a>
+        <a href="#">xxxx</a>
+        <a href="#">xxxx</a>
+        <a href="#">xxxx</a>
+        <a href="#">Agregar</a>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Plantación de xxxx</h1>
+            <p>18/07/2024</p>
+        </div>
+        <div class="grid">
+            <div class="box" style="background-color: #d4f7d4;"></div>
+            <div class="box" style="background-color: #f7d4d4;"></div>
+            <div class="box" style="background-color: #f7f1d4;"></div>
+            <div class="box" style="background-color: #f7f1d4;"></div>
+            <div class="box" style="background-color: #d4f7d4;"></div>
+            <div class="box" style="background-color: #d4f7d4;"></div>
+        </div>
+        <div class="recommendations">
+            <h2>Recomendaciones</h2>
+            <div class="box" style="background-color: #e0f7ff;"></div>
+        </div>
+        <div class="calendar">
+            <h2>Calendario</h2>
+            <div class="month">
+                <div class="month-box"></div>
+                <div class="month-box"></div>
+                <div class="month-box"></div>
+            </div>
+            <div class="month">
+                <div class="month-box"></div>
+                <div class="month-box"></div>
+                <div class="month-box"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
