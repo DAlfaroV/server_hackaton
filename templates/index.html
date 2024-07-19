@@ -15,10 +15,11 @@
     </div>
     <div class="main-content">
         <div class="header">
-            <h1>Plantación de [REDACTED]</h1>
+            <h1>Plantación de El Watona</h1>
             <p>19/07/2024</p>
         </div>
         <div class="content">
+            <!-- PESTAÑAS -->
             <div id="inicio">
                 <div class="grid">
                     <div class="box" style="background-color: #d4f7d4;"></div>
@@ -29,12 +30,14 @@
                     <div class="box" style="background-color: #d4f7d4;"></div>
                 </div>
             </div>
+            <!-- PESTAÑAS -->
             <div id="graficos" class="hidden">
                 <div class="recommendations">
                     <h2>Recomendaciones</h2>
                     <div class="box" style="background-color: #e0f7ff;"></div>
                 </div>
             </div>
+            <!-- PESTAÑAS -->
             <div id="algo" class="hidden">
                 <div class="calendar">
                     <h2>Calendario</h2>
@@ -52,7 +55,7 @@
             </div>
         </div>
     </div>
-    
+    <div id="data-container" class="box"></div>
     <script>
         // si sirvio xd
         function showContent(section) {
@@ -62,17 +65,50 @@
             document.getElementById(section).classList.remove('hidden');
         }
 
-        // Ocultar todas las secciones menos la inicial
         document.querySelectorAll('.content > div').forEach(div => {
             if (div.id !== 'inicio') {
                 div.classList.add('hidden');
             }
         });
+        async function fetchData() {
+            try {
+                const response = await fetch('/data.json');
+                const data = await response.json();
+                const container = document.getElementById('data-container');
 
-        // Intento de hacer algo funcional
-        function kekw() {
+                data.forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.classList.add('data-item');
 
+                    const temperatureDiv = document.createElement('div');
+                    temperatureDiv.classList.add('data-title');
+                    temperatureDiv.textContent = `Temperatura: ${item.temperatura}`;
+                    itemDiv.appendChild(temperatureDiv);
+
+                    const humidityDiv = document.createElement('div');
+                    humidityDiv.classList.add('data-title');
+                    humidityDiv.textContent = `Humedad: ${item.humedad}`;
+                    itemDiv.appendChild(humidityDiv);
+
+                    const soilHumidityDiv = document.createElement('div');
+                    soilHumidityDiv.classList.add('data-title');
+                    soilHumidityDiv.textContent = `Humedad del Suelo: ${item.humedad_suelo}`;
+                    itemDiv.appendChild(soilHumidityDiv);
+
+                    const timestampDiv = document.createElement('div');
+                    timestampDiv.classList.add('data-title');
+                    timestampDiv.textContent = `Timestamp: ${item.timestamp}`;
+                    itemDiv.appendChild(timestampDiv);
+
+                    container.appendChild(itemDiv);
+                });
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
         }
+
+        fetchData();
+        
     </script>
 </body>
 </html>
