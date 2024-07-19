@@ -96,3 +96,6 @@ fetchWeatherData();
 // Update data every 5 seconds
 setInterval(updateAndFetchData, 5000);
 setInterval(fetchWeatherData, 60000); // Fetch weather data every 60 seconds
+
+
+//Funciones de formulario
