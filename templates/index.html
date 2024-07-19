@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NARFU</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="sidebar">
         <img src="logo.png" alt="Logo">
-        <button onclick="showContent('inicio')" >Inicio</button>
-        <button onclick="showContent('algo')" >Algo nose</button>
-        <button onclick="showContent('graficos')" >Graficos y Datos</button>
-        <button onclick="showContent('inicio')" >Algo sise</button>
-
+        <button onclick="showContent('inicio')">Inicio</button>
+        <button onclick="showContent('algo')">Algo nose</button>
+        <button onclick="showContent('graficos')">Graficos y Datos</button>
+        <button onclick="showContent('inicio')">Algo sise</button>
     </div>
     <div class="main-content">
         <div class="header">
@@ -81,7 +80,7 @@
             </div>
         </div>
     </div>
-  
+
     <script>
         function showContent(section) {
             document.querySelectorAll('.content > div').forEach(div => {
@@ -114,23 +113,23 @@
 
                     const temperatureDiv = document.createElement('div');
                     temperatureDiv.classList.add('data-title');
-                    temperatureDiv.textContent = `Temperatura: ${item.temperatura}`;
+                    temperatureDiv.textContent = `Temperatura: ${item.temperatura}°C`;
                     itemDiv.appendChild(temperatureDiv);
 
                     const humidityDiv = document.createElement('div');
                     humidityDiv.classList.add('data-title');
-                    humidityDiv.textContent = `Humedad: ${item.humedad}`;
+                    humidityDiv.textContent = `Humedad: ${item.humedad}%`;
                     itemDiv.appendChild(humidityDiv);
 
                     const soilHumidityDiv = document.createElement('div');
                     soilHumidityDiv.classList.add('data-title');
-                    soilHumidityDiv.textContent = `Humedad del Suelo: ${item.humedad_suelo}`;
+                    soilHumidityDiv.textContent = `Humedad del Suelo: ${item.humedad_suelo}%`;
                     itemDiv.appendChild(soilHumidityDiv);
 
                     if (item.timestamp) {
                         const timestampDiv = document.createElement('div');
                         timestampDiv.classList.add('data-title');
-                        timestampDiv.textContent = `Timestamp: ${item.timestamp}`;
+                        timestampDiv.textContent = `Hora registrada: ${item.timestamp}`;
                         itemDiv.appendChild(timestampDiv);
                     }
 
