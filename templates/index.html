@@ -20,7 +20,7 @@
             <p>19/07/2024</p>
         </div>
         <div class="content">
-            <!-- PESTAÑAS -->
+            <!-- PESTAÑA HOME -->
             <div id="inicio">
                 <div style="font-size: large;">NECESIDAD DE RIEGO:
                     <div style="font-size: xx-large;" class="box" style="background-color: #f7f1d4;">
@@ -36,12 +36,15 @@
                     </div>
                 </div>
             </div>
-            <!-- PESTAÑAS -->
+            <!-- PESTAÑA INGRESO DE DATOS -->
             <div id="graficos" class="hidden">
-                <div class="recommendations">
-                    <h2>Recomendaciones</h2>
-                    <div class="box" style="background-color: #e0f7ff;"></div>
-                </div>
+                <div class="form-container">
+                    <form id="fetch-form">
+                        <label for="sensor-id">Ingrese ID del sensor:</label>
+                        <input type="number" id="sensor-id" name="sensor-id" required>
+                        <button type="submit">Obtener datos</button>
+                    </form>
+                </div>                
             </div>
             <!-- PESTAÑAS -->
             <div id="algo" class="hidden">
