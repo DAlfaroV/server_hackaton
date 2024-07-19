@@ -1,0 +1,107 @@
+[
+  {
+    "id": 340,
+    "temperatura": 20.5,
+    "humedad": 66.3,
+    "humedad_suelo": 65,
+    "timestamp": "2024-07-19 12:37:33"
+  },
+  {
+    "id": 339,
+    "temperatura": 20.5,
+    "humedad": 67.1,
+    "humedad_suelo": 64,
+    "timestamp": "2024-07-19 12:32:32"
+  },
+  {
+    "id": 338,
+    "temperatura": 20.4,
+    "humedad": 66.4,
+    "humedad_suelo": 64,
+    "timestamp": "2024-07-19 12:29:31"
+  },
+  {
+    "id": 337,
+    "temperatura": 20.4,
+    "humedad": 66.5,
+    "humedad_suelo": 64,
+    "timestamp": "2024-07-19 12:28:31"
+  },
+  {
+    "id": 336,
+    "temperatura": 20.3,
+    "humedad": 66.7,
+    "humedad_suelo": 64,
+    "timestamp": "2024-07-19 12:27:31"
+  },
+  {
+    "id": 335,
+    "temperatura": 20.3,
+    "humedad": 67.4,
+    "humedad_suelo": 64,
+    "timestamp": "2024-07-19 12:26:31"
+  },
+  {
+    "id": 334,
+    "temperatura": 20.3,
+    "humedad": 66.9,
+    "humedad_suelo": 64,
+    "timestamp": "2024-07-19 12:25:31"
+  },
+  {
+    "id": 333,
+    "temperatura": 20.4,
+    "humedad": 66.8,
+    "humedad_suelo": 64,
+    "timestamp": "2024-07-19 12:24:31"
+  },
+  {
+    "id": 332,
+    "temperatura": 20.4,
+    "humedad": 66.5,
+    "humedad_suelo": 64,
+    "timestamp": "2024-07-19 12:23:30"
+  },
+  {
+    "id": 331,
+    "temperatura": 20.3,
+    "humedad": 66.3,
+    "humedad_suelo": 63,
+    "timestamp": "2024-07-19 12:22:29"
+  },
+  {
+    "id": 330,
+    "temperatura": 20.4,
+    "humedad": 67.1,
+    "humedad_suelo": 64,
+    "timestamp": "2024-07-19 12:21:29"
+  },
+  {
+    "id": 329,
+    "temperatura": 20.5,
+    "humedad": 67.3,
+    "humedad_suelo": 64,
+    "timestamp": "2024-07-19 12:20:29"
+  },
+  {
+    "id": 328,
+    "temperatura": 20.5,
+    "humedad": 67.7,
+    "humedad_suelo": 63,
+    "timestamp": "2024-07-19 12:19:29"
+  },
+  {
+    "id": 327,
+    "temperatura": 20.4,
+    "humedad": 66.7,
+    "humedad_suelo": 63,
+    "timestamp": "2024-07-19 12:18:28"
+  },
+  {
+    "id": 326,
+    "temperatura": 20.4,
+    "humedad": 68.2,
+    "humedad_suelo": 63,
+    "timestamp": "2024-07-19 12:17:28"
+  }
+]

@@ -56,9 +56,34 @@ def update_data():
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)}), 500
 
+@app.route('/update-last-15-data', methods=['GET'])
+def update_last_15_data():
+    try:
+        with db.cursor(pymysql.cursors.DictCursor) as cursor:
+            query = '''
+                SELECT id, temperatura, humedad, humedad_suelo, 
+                       DATE_FORMAT(timestamp, '%Y-%m-%d %H:%i:%s') as timestamp 
+                FROM datos_sensores
+                ORDER BY id DESC
+                LIMIT 15
+            '''
+            cursor.execute(query)
+            results = cursor.fetchall()
+
+            with open('last_15_data.json', 'w') as json_file:
+                json.dump(results, json_file, indent=2)
+
+        return jsonify({'status': 'success', 'message': 'Last 15 records updated'}), 200
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
 @app.route('/data.json', methods=['GET'])
 def get_data():
     return send_from_directory(os.getcwd(), 'data.json')
+
+@app.route('/last_15_data.json', methods=['GET'])
+def get_last_15_data():
+    return send_from_directory(os.getcwd(), 'last_15_data.json')
 
 @app.route('/')
 def index():

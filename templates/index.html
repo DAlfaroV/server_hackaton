@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NARFU</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="sidebar">
         <img src="logo.png" alt="Logo">
         <button onclick="showContent('inicio')">Inicio</button>
         <button onclick="showContent('Formulario')">Tu Huerto</button>
-        <button onclick="showContent('graficos')">Graficos y Datos</button>
-        <button onclick="showContent('inicio')">Algo sise</button>
+        <button onclick="showContent('graficos')">Gráficos y Datos</button>
+        <!--<button onclick="showContent('inicio')">Algo sise</button>-->
     </div>
     <div class="main-content">
         <div class="header">
@@ -23,13 +24,12 @@
             <!-- PESTAÑAS -->
             <div id="inicio">
                 <div style="font-size: large;">NECESIDAD DE RIEGO:
-                    <div class="box" style="background-color: #dedcc0";style="font-size: xx-large";>
-                        AGUA NECESARIA : 
-                        
+                    <div class="box" style="background-color: #dedcc0; font-size: xx-large;">
+                        AGUA NECESARIA:
                     </div>
                 </div>
                 <div class="grid">
-                    <div style="font-size: large; margin-left: 40%; width: 300px;">ESTADO DEL HUERTO    :
+                    <div style="font-size: large; margin-left: 40%; width: 300px;">ESTADO DEL HUERTO:
                         <div id="data-container" class="box" style="background-color: #d4f7d4;"></div>
                     </div>
                     <div style="font-size: large; margin-left: 30%;">CLIMA:
@@ -45,36 +45,9 @@
                 </div>
             </div>
             <!-- PESTAÑAS -->
-            <div id="algo" class="hidden">
-                <div class="calendar">
-                    <h2>Calendario</h2>
-                    <div class="month">
-                        <div class="month-box"></div>
-                        <div class="month-box"></div>
-                        <div class="month-box"></div>
-                    </div>
-                    <div class="month">
-                        <div class="month-box"></div>
-                        <div class="month-box"></div>
-                        <div class="month-box"></div>
-                    </div>
-                </div>
-            </div>
-            <!-- PESTAÑAS -->
-            <div id="algo" class="hidden">
-                <div class="calendar">
-                    <h2>Calendario</h2>
-                    <div class="month">
-                        <div class="month-box"></div>
-                        <div class="month-box"></div>
-                        <div class="month-box"></div>
-                    </div>
-                    <div class="month">
-                        <div class="month-box"></div>
-                        <div class="month-box"></div>
-                        <div class="month-box"></div>
-                    </div>
-                </div>
+            <div id="graficos" class="hidden">
+                <h2>Gráficos y Datos</h2>
+                <canvas id="data-chart" width="400" height="200"></canvas>
             </div>
         </div>
     </div>
