@@ -83,7 +83,6 @@
     </div>
   
     <script>
-        // si sirvio xd
         function showContent(section) {
             document.querySelectorAll('.content > div').forEach(div => {
                 div.classList.add('hidden');
@@ -96,13 +95,20 @@
                 div.classList.add('hidden');
             }
         });
-        async function fetchData() {
+
+        async function updateAndFetchData() {
             try {
+                await fetch('/update-data'); // Actualiza data.json
                 const response = await fetch('/data.json');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
                 const data = await response.json();
                 const container = document.getElementById('data-container');
+                container.innerHTML = ''; // Clear previous data
 
-                data.forEach(item => {
+                if (data.length > 0) {
+                    const item = data[0];
                     const itemDiv = document.createElement('div');
                     itemDiv.classList.add('data-item');
 
@@ -121,20 +127,27 @@
                     soilHumidityDiv.textContent = `Humedad del Suelo: ${item.humedad_suelo}`;
                     itemDiv.appendChild(soilHumidityDiv);
 
-                    const timestampDiv = document.createElement('div');
-                    timestampDiv.classList.add('data-title');
-                    timestampDiv.textContent = `Timestamp: ${item.timestamp}`;
-                    itemDiv.appendChild(timestampDiv);
+                    if (item.timestamp) {
+                        const timestampDiv = document.createElement('div');
+                        timestampDiv.classList.add('data-title');
+                        timestampDiv.textContent = `Timestamp: ${item.timestamp}`;
+                        itemDiv.appendChild(timestampDiv);
+                    }
 
                     container.appendChild(itemDiv);
-                });
+                } else {
+                    container.textContent = 'No data available';
+                }
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         }
 
-        fetchData();
-        
+        // Call the function to update and fetch data when the page loads
+        updateAndFetchData();
+
+        // Update data every 5 seconds
+        setInterval(updateAndFetchData, 5000);
     </script>
 </body>
 </html>
