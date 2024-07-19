@@ -2,16 +2,9 @@
     {
       "id": 1,
       "temperatura": 25.3,
-      "humedad": 60.2,
+      "humedad": 65,
       "humedad_suelo": 30,
       "timestamp": "2024-07-18 12:34:56"
-    },
-    {
-      "id": 2,
-      "temperatura": 26.1,
-      "humedad": 62.0,
-      "humedad_suelo": 28,
-      "timestamp": "2024-07-18 12:35:56"
     }
   ]
   
